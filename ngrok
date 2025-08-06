@@ -1,0 +1,8 @@
+version: "3"
+agent:
+    authtoken: 2tTTsAqqPsmIUxsmOD6clayIJcB_6oKox13iCRxaK9S21jmCx
+tunnels:
+  express-app:
+    proto: http
+    addr: 5000  # Change this if your Express app runs on a different port
+    host_header: rewrite
