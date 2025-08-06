@@ -33,8 +33,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(morgan('dev'));
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://timely-track-frontend-git-master-aasminis-projects.vercel.app'
+];
+
 // Middleware to enable Cross-Origin Resource Sharing (CORS)
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 // Serve static files from public directory
 app.use(express.static(path.join(__dirname, 'public')));
